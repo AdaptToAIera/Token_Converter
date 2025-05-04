@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#f2f2f7"> </head>
+<body>
+    <header>
+        <h1 id="app-title">Token Calculator</h1>
+        <button id="language-toggle" class="lang-button">
+            <span id="lang-flag">🇬🇧</span>
+            <span id="lang-code">EN</span>
+        </button>
+    </header>
+
+    <main>
+        <section class="card">
+            <label for="token-input" id="token-count-label" class="label">Token Count</label>
+            <div class="input-container">
+                <input type="number" id="token-input" placeholder="Enter positive number">
+                <button id="clear-input" class="clear-button hidden">&times;</button>
+            </div>
+            <p id="input-validation-message" class="validation-message hidden">Please enter a valid positive number</p>
+        </section>
+
+        <section class="settings-section">
+            <button id="toggle-settings" class="toggle-button blue">
+                <div class="button-content">
+                    <img src="gearshape.svg" alt="Settings Icon" class="icon"> <span id="settings-title">Conversion Settings</span>
+                </div>
+                <span id="settings-chevron" class="chevron">&darr;</span>
+            </button>
+            <div id="settings-content" class="settings-content hidden card">
+                <p id="token-word-ratio-display" class="subheadline">Token to word ratio: 1.33</p>
+                <div class="slider-container">
+                    <span class="caption secondary-label">0.5</span>
+                    <input type="range" id="ratio-slider" min="0.5" max="3.0" step="0.01" value="1.33">
+                    <span class="caption secondary-label">3.0</span>
+                </div>
+                <p id="explanation-title" class="subheadline explain-title">Ratio explanation:</p>
+                <ul class="caption secondary-label explanation-list">
+                    <li id="standard-ratio">• 1.33 = Standard ratio (default)</li>
+                    <li id="lower-value">• Lower value = more words from tokens</li>
+                    <li id="higher-value">• Higher value = fewer words from tokens</li>
+                </ul>
+                <button id="reset-ratio" class="reset-button blue">
+                    <span id="reset-default-text">Reset to Default</span>
+                </button>
+            </div>
+        </section>
+
+        <section id="results-section" class="results-section hidden">
+            <div class="result-card blue">
+                <div class="icon-circle">
+                     <img src="text.word.count.svg" alt="Word Count Icon" class="icon white"> </div>
+                <div class="result-details">
+                    <p id="word-count-title" class="subheadline secondary-label">Word Count</p>
+                    <p id="word-count-value" class="title3 bold label">0</p>
+                </div>
+            </div>
+            <div class="result-card blue">
+                <div class="icon-circle">
+                    <img src="doc.text.svg" alt="Page Count Icon" class="icon white"> </div>
+                 <div class="result-details">
+                    <p id="page-count-title" class="subheadline secondary-label">Page Count</p>
+                    <p id="page-count-value" class="title3 bold label">0</p>
+                </div>
+            </div>
+            <div class="result-card blue">
+                 <div class="icon-circle">
+                    <img src="character.svg" alt="Character Count Icon" class="icon white"> </div>
+                 <div class="result-details">
+                    <p id="char-count-title" class="subheadline secondary-label">Character Count</p>
+                    <p id="char-count-value" class="title3 bold label">0</p>
+                </div>
+            </div>
+
+            <button id="toggle-tips" class="toggle-button orange">
+                <div class="button-content">
+                    <img src="lightbulb.svg" alt="Tips Icon" class="icon"> <span id="show-hide-tips-text">Show Tips</span>
+                </div>
+                 <span id="tips-chevron" class="chevron">&darr;</span>
+            </button>
+
+            <div id="tips-content" class="tips-content hidden card">
+                 <p id="tips-title" class="headline label">Useful Information</p>
+                 <ul class="secondary-label tips-list">
+                     <li id="tip1" class="subheadline">• 1 token is approximately 4 characters in English</li>
+                     <li id="tip2" class="subheadline">• Large language models typically charge by tokens, not words</li>
+                     <li id="tip3" class="subheadline">• A standard page has 250 words or 1,800 characters</li>
+                     <li id="tip4" class="subheadline">• Average word length is 5-6 characters</li>
+                     <li id="tip5" class="subheadline">• On average, there are about 1.3 tokens per word</li>
+                 </ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('Service Worker registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('Service Worker registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

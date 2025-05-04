@@ -1,0 +1,22 @@
+{
+    "name": "Token Calculator",
+    "short_name": "Token Calc",
+    "description": "Calculate word, page, and character counts from tokens.",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#f2f2f7",
+    "theme_color": "#f2f2f7",
+    "icons": [
+        {
+            "src": "/icons/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+        // Add more icon sizes as needed for various devices/platforms
+    ]
+}
