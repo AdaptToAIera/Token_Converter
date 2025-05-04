@@ -1,4 +1,4 @@
-# Token Calculator PWA
+# Token Calculator
 
 A Progressive Web App (PWA) for calculating estimated word, page, and character counts from a given number of tokens. Useful for working with large language models or content creation based on token limits.
 
@@ -18,9 +18,6 @@ A Progressive Web App (PWA) for calculating estimated word, page, and character 
 
 [Provide a link to a live demo of your PWA here, if hosted.]
 
-## Screenshot
-
-![Screenshot of the Token Calculator PWA](image_3658f4.png)
 
 ## Technologies Used
 
@@ -33,14 +30,8 @@ A Progressive Web App (PWA) for calculating estimated word, page, and character 
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/](https://github.com/)[Your-GitHub-Username]/[your-repo-name].git
-    cd [your-repo-name]
+    git clone https://github.com/AdaptToAIera/Token_Converter.git
     ```
-2.  **Serve the files:** PWAs, especially those with Service Workers, need to be served over HTTP(S). You can use a simple local web server for testing.
-    * **Using Python:** If you have Python installed, run `python -m http.server` in the project directory.
-    * **Using Node.js:** If you have Node.js installed, you can use `npx serve` (install with `npm install -g serve` if needed).
-    * **Other Options:** Many IDEs (like VS Code with extensions) or tools provide built-in web servers.
-3.  **Open in browser:** Navigate to the address provided by your local server (e.g., `http://localhost:8000`).
 
 ## Usage
 
@@ -57,6 +48,7 @@ The application supports the following languages:
 
 * English (EN)
 * Slovak (SK)
+* ... others will follow
 
 ## Contributing
 
