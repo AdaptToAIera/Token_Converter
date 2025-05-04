@@ -1,4 +1,4 @@
-const CACHE_NAME = 'token-calculator-cache-v1';
+const CACHE_NAME = 'token-calculator-cache-v1.1.0';
 const urlsToCache = [
     '/index.html',
     '/style.css',
