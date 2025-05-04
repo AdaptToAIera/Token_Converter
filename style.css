@@ -1,147 +1,298 @@
-/* CSS Variables for Theming */
+/* CSS Variables for Theming - Refined to match iOS tones */
 :root {
-    /* Light Mode */
-    --background-color: #f2f2f7; /* systemGroupedBackground */
-    --secondary-background-color: #ffffff; /* secondarySystemBackground */
-    --tertiary-background-color: #ffffff; /* tertiarySystemBackground */
-    --grouped-background-color: #f2f2f7; /* systemGroupedBackground */
-    --secondary-grouped-background-color: #ffffff; /* secondarySystemGroupedBackground */
-    --tertiary-grouped-background-color: #ffffff; /* tertiarySystemGroupedBackground */
+    /* Light Mode - Approximate iOS System Colors */
+    --system-background: #ffffff;
+    --system-grouped-background: #f2f2f7;
+    --secondary-system-background: #ffffff;
+    --secondary-system-grouped-background: #ffffff;
+    --tertiary-system-grouped-background: #ffffff;
 
-    --label-color: #000000; /* label */
-    --secondary-label-color: #3c3c4399; /* secondaryLabel (with opacity) */
-    --tertiary-label-color: #3c3c434d; /* tertiaryLabel (with opacity) */
+    --label: #000000;
+    --secondary-label: rgba(60, 60, 67, 0.6); /* 60% opacity */
+    --tertiary-label: rgba(60, 60, 67, 0.3); /* 30% opacity */
 
-    --blue-accent-color: #007aff; /* blueAccent */
-    --green-accent-color: #34c759; /* greenAccent */
-    --orange-accent-color: #ff9500; /* orangeAccent */
+    --blue-accent: #007aff;
+    --green-accent: #34c759;
+    --orange-accent: #ff9500;
 
-    --shadow-color: rgba(0, 0, 0, 0.1); /* shadowColor */
-    --shadow-radius: 5px; /* shadowRadius */
-    --shadow-x: 0; /* shadowX */
-    --shadow-y: 2px; /* shadowY */
+    --system-fill: rgba(120, 120, 128, 0.1); /* Reduced opacity for light mode fill */
 
-    --blue-button-background-color: rgba(0, 122, 255, 0.1); /* blueButtonBackground */
-    --green-button-background-color: rgba(52, 199, 89, 0.1); /* greenButtonBackground */
-    --orange-button-background-color: rgba(255, 149, 0, 0.1); /* orangeButtonBackground */
+
+    --separator-color: rgba(60, 60, 67, 0.29);
+
+
+    /* Shadow */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --shadow-radius: 5px;
+    --shadow-x: 0;
+    --shadow-y: 2px;
+
+    /* Button Backgrounds */
+    --blue-button-background: rgba(0, 122, 255, 0.1);
+    --green-button-background: rgba(52, 199, 89, 0.1);
+    --orange-button-background: rgba(255, 149, 0, 0.1);
+
+    /* Card border */
+    --card-border-color: transparent;
+
+    /* Header Background for Light Mode */
+    --header-background: #ffffff;
 }
 
-/* Dark Mode */
+/* Dark Mode - Approximate iOS System Colors */
 @media (prefers-color-scheme: dark) {
     :root {
-        --background-color: #1c1c1e;
-        --secondary-background-color: #2c2c2e;
-        --tertiary-background-color: #3a3a3c;
-        --grouped-background-color: #1c1c1e;
-        --secondary-grouped-background-color: #2c2c2e;
-        --tertiary-grouped-background-color: #3a3a3c;
+        --system-background: #000000;
+        --system-grouped-background: #1c1c1e;
+        --secondary-system-background: #1c1c1e;
+        --secondary-system-grouped-background: #2c2c2e;
+        --tertiary-system-grouped-background: #3a3a3c;
 
-        --label-color: #ffffff;
-        --secondary-label-color: #ebebf599;
-        --tertiary-label-color: #ebebf54d;
 
-        --blue-accent-color: #0a84ff;
-        --green-accent-color: #30d158;
-        --orange-accent-color: #ff9f0a;
+        --label: #ffffff;
+        --secondary-label: rgba(235, 235, 245, 0.6);
+        --tertiary-label: rgba(235, 235, 245, 0.3);
 
-         --shadow-color: rgba(0, 0, 0, 0.3); /* Adjust shadow for dark mode visibility */
+        --blue-accent: #0a84ff;
+        --green-accent: #30d158;
+        --orange-accent: #ff9f0a;
+
+         --system-fill: rgba(120, 120, 128, 0.36);
+
+        --separator-color: rgba(84, 84, 88, 0.6);
+
+        /* Shadow in Dark Mode */
+        --shadow-color: rgba(0, 0, 0, 0.3);
+
+        /* Button Backgrounds in Dark Mode */
+         --blue-button-background: rgba(10, 132, 255, 0.15);
+         --green-button-background: rgba(48, 209, 88, 0.15);
+         --orange-button-background: rgba(255, 159, 10, 0.15);
+
+         /* Card border in Dark Mode */
+         --card-border-color: rgba(84, 84, 88, 0.2);
+
+         /* Header Background for Dark Mode */
+         --header-background: #1c1c1e;
     }
+     /* Apply dark mode specific background to body */
+     body {
+         background-color: var(--system-grouped-background) !important;
+     }
+     header {
+         background-color: var(--header-background) !important; /* Override light mode header background */
+     }
 }
 
+/* --- Manual Theme Overrides --- */
+/* These classes will be applied to the <html> tag by JavaScript */
+html[data-theme='light'] {
+     --system-background: #ffffff;
+    --system-grouped-background: #f2f2f7;
+    --secondary-system-background: #ffffff;
+    --secondary-system-grouped-background: #ffffff;
+    --tertiary-system-grouped-background: #ffffff;
+
+    --label: #000000;
+    --secondary-label: rgba(60, 60, 67, 0.6);
+    --tertiary-label: rgba(60, 60, 67, 0.3);
+
+    --blue-accent: #007aff;
+    --green-accent: #34c759;
+    --orange-accent: #ff9500;
+
+    --system-fill: rgba(120, 120, 128, 0.1);
+
+    --separator-color: rgba(60, 60, 67, 0.29);
+
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --shadow-radius: 5px;
+    --shadow-x: 0;
+    --shadow-y: 2px;
+
+    --blue-button-background: rgba(0, 122, 255, 0.1);
+    --green-button-background: rgba(52, 199, 89, 0.1);
+    --orange-button-background: rgba(255, 149, 0, 0.1);
+
+    --card-border-color: transparent;
+    --header-background: #ffffff;
+
+     color-scheme: light; /* Hint to browser for form elements etc. */
+}
+
+html[data-theme='dark'] {
+     --system-background: #000000;
+    --system-grouped-background: #1c1c1e;
+    --secondary-system-background: #1c1c1e;
+    --secondary-system-grouped-background: #2c2c2e;
+    --tertiary-system-grouped-background: #3a3a3c;
+
+
+    --label: #ffffff;
+    --secondary-label: rgba(235, 235, 245, 0.6);
+    --tertiary-label: rgba(235, 235, 245, 0.3);
+
+    --blue-accent: #0a84ff;
+    --green-accent: #30d158;
+    --orange-accent: #ff9f0a;
+
+     --system-fill: rgba(120, 120, 128, 0.36);
+
+    --separator-color: rgba(84, 84, 88, 0.6);
+
+    --shadow-color: rgba(0, 0, 0, 0.3);
+
+     --blue-button-background: rgba(10, 132, 255, 0.15);
+     --green-button-background: rgba(48, 209, 88, 0.15);
+     --orange-button-background: rgba(255, 159, 10, 0.15);
+
+     --card-border-color: rgba(84, 84, 88, 0.2);
+     --header-background: #1c1c1e;
+
+     color-scheme: dark; /* Hint to browser */
+}
+
+/* Base styles applied regardless of theme or media query */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     margin: 0;
     padding: 0;
-    background-color: var(--grouped-background-color);
-    color: var(--label-color);
-    line-height: 1.5;
+    background-color: var(--system-grouped-background); /* Use variable */
+    color: var(--label); /* Use variable */
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease; /* Smooth transition for theme change */
 }
 
 header {
-    background-color: var(--secondary-background-color); /* Similar to navigation bar background */
-    color: var(--label-color);
+    background-color: var(--header-background); /* Use variable */
+    color: var(--label);
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 1px 3px var(--shadow-color); /* Slight shadow for depth */
+    box-shadow: 0 1px 3px var(--shadow-color);
     position: sticky;
     top: 0;
-    z-index: 10; /* Stay on top when scrolling */
+    z-index: 10;
+    min-height: 44px;
+    transition: background-color 0.3s ease; /* Smooth transition */
 }
 
-header h1 {
-    font-size: 1.5rem;
+.header-title {
+    font-size: 1.1rem;
+    font-weight: 600;
     margin: 0;
-    color: var(--label-color);
+    color: var(--label);
+    flex-grow: 1; /* Allow title to take space */
+    text-align: center; /* Center the title */
+    /* Position adjustment for centering when controls are present */
+    transform: translateX(calc(50% - 50px)); /* Adjust based on control width */
+    margin-left: auto; /* Push title to the right */
+    margin-right: auto; /* Pull title to the left */
+    max-width: fit-content; /* Prevent stretching */
 }
 
-.lang-button {
-    background-color: var(--green-button-background-color);
-    color: var(--green-accent-color);
-    border: none;
-    padding: 6px 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 0.9rem;
+
+.header-controls {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 10px; /* Space between buttons */
 }
 
+
+.lang-button,
+.icon-button { /* Style for the new theme toggle button */
+    background-color: transparent; /* Default transparent background */
+    border: none;
+    padding: 6px; /* Padding for icon button */
+    border-radius: 8px; /* Match language button style */
+    cursor: pointer;
+    font-size: 1rem; /* Standard icon size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.15s ease-in-out;
+     width: 30px; /* Fixed width */
+     height: 30px; /* Fixed height */
+     color: var(--blue-accent); /* Default icon color */
+}
+
+.icon-button .icon {
+    width: 20px;
+    height: 20px;
+     fill: currentColor; /* Icon color matches button color */
+}
+
+
+.lang-button {
+     background-color: var(--green-button-background); /* Specific background for lang button */
+     color: var(--green-accent); /* Specific color for lang button */
+     width: auto; /* Auto width for text + flag */
+     padding: 6px 10px;
+     gap: 4px;
+}
+
+.lang-button:hover { background-color: rgba(52, 199, 89, 0.15); }
+.lang-button:active { background-color: rgba(52, 199, 89, 0.2); }
+
+.icon-button:hover { background-color: var(--system-fill); /* Subtle hover for icon buttons */ }
+.icon-button:active { background-color: rgba(120, 120, 128, 0.3); /* More prominent active state */ }
+
+
 .lang-button span:last-child {
-    font-weight: bold;
+    font-weight: 600;
     font-size: 0.8rem;
 }
 
-
+/* Adjusted padding for main to account for header height */
 main {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .card {
-    background-color: var(--secondary-background-color);
+    background-color: var(--secondary-system-grouped-background);
     padding: 16px;
     border-radius: 12px;
     box-shadow: var(--shadow-x) var(--shadow-y) var(--shadow-radius) var(--shadow-color);
+    border: 1px solid var(--card-border-color);
+     transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
 
 .label {
     font-size: 1rem;
-    font-weight: bold;
-    color: var(--label-color);
+    font-weight: 600;
+    color: var(--label);
     margin-bottom: 8px;
-    display: block; /* Ensure label is on its own line */
+    display: block;
 }
 
 .subheadline {
      font-size: 0.95rem;
-     color: var(--label-color);
+     color: var(--secondary-label);
 }
 
 .caption {
      font-size: 0.85rem;
+     color: var(--tertiary-label);
 }
 
 .headline {
      font-size: 1.2rem;
-     font-weight: bold;
-     color: var(--label-color);
+     font-weight: 600;
+     color: var(--label);
 }
 
 .title3 {
-    font-size: 1.2rem;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-.secondary-label {
-    color: var(--secondary-label-color);
+    font-size: 1.3rem;
+     font-weight: 700;
+     color: var(--label); /* Ensure value color is primary label */
 }
 
 
@@ -149,53 +300,64 @@ main {
     display: flex;
     align-items: center;
     gap: 8px;
+    background-color: var(--system-fill);
+    border-radius: 10px;
+    padding: 0 12px;
+     transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
 }
 
 #token-input {
     flex-grow: 1;
-    padding: 10px;
-    border: 1px solid var(--secondary-label-color); /* Default border */
-    border-radius: 10px;
-    background-color: var(--secondary-background-color); /* Match card background */
-    color: var(--label-color);
+    padding: 10px 0;
+    border: none;
+    background-color: transparent;
+    color: var(--label);
     font-size: 1rem;
-}
-
-#token-input:focus {
     outline: none;
-    border-color: var(--blue-accent-color); /* Highlight on focus */
+    appearance: none;
 }
 
-#token-input.invalid {
-     border-color: red;
+#token-input::placeholder {
+     color: var(--secondary-label);
+     opacity: 0.6;
 }
+
+.input-container.invalid {
+    border: 1px solid #ff3b30; /* iOS Red for invalid */
+    padding: 0 11px;
+}
+
 
 .clear-button {
     background: none;
     border: none;
     font-size: 1.2rem;
-    color: var(--secondary-label-color);
+    color: var(--tertiary-label);
     cursor: pointer;
-    padding: 0 5px;
+    padding: 0;
+    margin-left: 8px;
 }
 
 .validation-message {
     font-size: 0.85rem;
-    color: red;
+    color: #ff3b30;
     margin-top: 4px;
     margin-bottom: 0;
+    padding-left: 12px;
 }
 
 .toggle-button {
     width: 100%;
     border: none;
-    padding: 16px;
+    padding: 14px 16px;
     border-radius: 10px;
     cursor: pointer;
     font-size: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-weight: 400;
+    transition: background-color 0.15s ease-in-out;
 }
 
 .toggle-button .button-content {
@@ -207,27 +369,34 @@ main {
 .toggle-button .icon {
     width: 20px;
     height: 20px;
-    /* Fill color might need to be set based on context or use SVG that inherits color */
+    fill: currentColor;
 }
 
 
 .toggle-button.blue {
-    background-color: var(--blue-button-background-color);
-    color: var(--blue-accent-color);
+    background-color: var(--blue-button-background);
+    color: var(--blue-accent);
 }
+.toggle-button.blue:hover { background-color: rgba(0, 122, 255, 0.15); }
+.toggle-button.blue:active { background-color: rgba(0, 122, 255, 0.2); }
+
 
 .toggle-button.orange {
-    background-color: var(--orange-button-background-color);
-    color: var(--orange-accent-color);
+    background-color: var(--orange-button-background);
+    color: var(--orange-accent);
 }
+.toggle-button.orange:hover { background-color: rgba(255, 149, 0, 0.15); }
+.toggle-button.orange:active { background-color: rgba(255, 149, 0, 0.2); }
+
 
 .chevron {
     font-size: 1.2rem;
+    line-height: 1;
 }
 
-.settings-content {
-    margin-top: 16px;
-     /* Inherits card styles */
+.settings-content,
+.tips-content {
+    margin-top: 12px;
 }
 
 .slider-container {
@@ -236,22 +405,46 @@ main {
     gap: 10px;
     margin-top: 8px;
     margin-bottom: 8px;
+    padding: 8px 0;
 }
 
 #ratio-slider {
     flex-grow: 1;
-    accent-color: var(--blue-accent-color); /* Styles the slider track/thumb */
+    accent-color: var(--blue-accent);
+    height: 2px;
 }
 
+#ratio-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  background: var(--blue-accent);
+  cursor: pointer;
+  border-radius: 50%;
+   margin-top: -11px;
+   box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+#ratio-slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  background: var(--blue-accent);
+  cursor: pointer;
+  border-radius: 50%;
+   box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+
 .explanation-list {
-    list-style: none; /* Remove default bullet points */
+    list-style: none;
     padding-left: 0;
     margin-top: 8px;
     margin-bottom: 8px;
 }
 
 .explanation-list li {
-    margin-bottom: 4px; /* Space between list items */
+    margin-bottom: 4px;
 }
 
 .explain-title {
@@ -264,14 +457,19 @@ main {
     border-radius: 8px;
     cursor: pointer;
     font-size: 0.95rem;
-    display: inline-block; /* Allow padding and margin */
-    margin-top: 4px;
+    font-weight: 400;
+    display: inline-block;
+    margin-top: 8px;
+    transition: background-color 0.15s ease-in-out;
 }
 
 .reset-button.blue {
-    background-color: var(--blue-button-background-color);
-    color: var(--blue-accent-color);
+    background-color: var(--blue-button-background);
+    color: var(--blue-accent);
 }
+.reset-button.blue:hover { background-color: rgba(0, 122, 255, 0.15); }
+.reset-button.blue:active { background-color: rgba(0, 122, 255, 0.2); }
+
 
 .results-section {
     display: flex;
@@ -283,53 +481,53 @@ main {
     display: flex;
     align-items: center;
     gap: 16px;
-    background-color: var(--secondary-background-color);
+    background-color: var(--secondary-system-grouped-background);
     padding: 16px;
     border-radius: 12px;
     box-shadow: var(--shadow-x) var(--shadow-y) var(--shadow-radius) var(--shadow-color);
+     border: 1px solid var(--card-border-color);
+      transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
 
 .icon-circle {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--blue-accent-color); /* Use accent color */
+    background-color: var(--blue-accent);
+     flex-shrink: 0;
+     transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 .icon-circle .icon {
-    width: 24px; /* Adjust size as needed */
-    height: 24px;
-}
-
-.icon-circle .icon.white {
-     /* For placeholder SVGs that might need color */
-     filter: invert(1); /* Simple trick to make a black icon white */
+    width: 22px;
+    height: 22px;
+    fill: white; /* Keep icons inside circle white for contrast */
 }
 
 
 .result-details {
     display: flex;
     flex-direction: column;
+     flex-grow: 1;
 }
 
-
-.tips-content {
-     /* Inherits card styles */
-     margin-top: 16px;
+.result-details p {
+    margin: 0;
 }
 
 .tips-list {
-    list-style: none; /* Remove default bullet points */
+    list-style: none;
     padding-left: 0;
     margin-top: 10px;
 }
 
 .tips-list li {
-    margin-bottom: 6px; /* Space between list items */
+    margin-bottom: 6px;
 }
+
 
 /* Utility class to hide elements */
 .hidden {

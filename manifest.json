@@ -17,6 +17,11 @@
             "sizes": "512x512",
             "type": "image/png"
         }
+        {
+            "src": "/icons/icon-1024x1024.png",
+            "sizes": "1024x1024",
+            "type": "image/png"
+        }
         // Add more icon sizes as needed for various devices/platforms
     ]
 }
