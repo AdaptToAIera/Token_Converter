@@ -2,7 +2,7 @@
 const localization = {
     en: {
         appTitle: "Token Converter",
-        tokenCount: "Token Count",
+        tokenCount: "Enter the token count",
         enterPositiveNumber: "Enter positive number",
         invalidInput: "Please enter a valid positive number",
         settingsTitle: "Conversion Settings",
@@ -26,7 +26,7 @@ const localization = {
     },
     sk: {
         appTitle: "Token Prevodník",
-        tokenCount: "Počet tokenov",
+        tokenCount: "Zadaj počet tokenov",
         enterPositiveNumber: "Zadajte kladné celé číslo",
         invalidInput: "Zadajte platné kladné celé číslo",
         settingsTitle: "Nastavenia prevodu",
