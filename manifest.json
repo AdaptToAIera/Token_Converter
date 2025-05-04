@@ -8,15 +8,15 @@
     "theme_color": "#f2f2f7",
     "icons": [
         {
-            "src": "/icons/icon-192x192.png",
+            "src": "/Token_Converter/icons/icon-192x192.png", // Opravená cesta
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/icons/icon-512x512.png",
+            "src": "/Token_Converter/icons/icon-512x512.png", // Opravená cesta
             "sizes": "512x512",
             "type": "image/png"
         }
-
+        // ...
     ]
 }
