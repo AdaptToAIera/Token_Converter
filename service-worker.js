@@ -1,9 +1,9 @@
-const CACHE_NAME = 'token-calculator-cache-v1.1.1';
+const CACHE_NAME = 'token-calculator-cache-v1.1.2';
 const urlsToCache = [
-    '/index.html',
-    '/style.css',
-    '/script.js',
-    '/manifest.json',
+    '/Token_Converter/index.html',
+    '/Token_Converter/style.css',
+    '/Token_Converter/script.js',
+    '/Token_Converter/manifest.json',
     // Add paths to your icon files here, e.g.:
     // '/icons/icon-192x192.png',
     // '/icons/icon-512x512.png',

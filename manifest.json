@@ -2,7 +2,7 @@
     "name": "Token Calculator",
     "short_name": "Token Calc",
     "description": "Calculate word, page, and character counts from tokens.",
-    "start_url": "/index.html",
+    "start_url": "/Token_Converter/index.html",
     "display": "standalone",
     "background_color": "#f2f2f7",
     "theme_color": "#f2f2f7",
